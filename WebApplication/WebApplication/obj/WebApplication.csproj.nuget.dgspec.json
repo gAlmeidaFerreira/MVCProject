@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guial\\source\\repos\\MVCProject\\WebApplication\\WebApplication\\WebApplication.csproj": {}
+    "\\\\wsl.localhost\\Ubuntu\\home\\galmeidaf\\source\\repos\\MVCProject\\WebApplication\\WebApplication\\WebApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guial\\source\\repos\\MVCProject\\WebApplication\\WebApplication\\WebApplication.csproj": {
+    "\\\\wsl.localhost\\Ubuntu\\home\\galmeidaf\\source\\repos\\MVCProject\\WebApplication\\WebApplication\\WebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guial\\source\\repos\\MVCProject\\WebApplication\\WebApplication\\WebApplication.csproj",
+        "projectUniqueName": "\\\\wsl.localhost\\Ubuntu\\home\\galmeidaf\\source\\repos\\MVCProject\\WebApplication\\WebApplication\\WebApplication.csproj",
         "projectName": "WebApplication",
-        "projectPath": "C:\\Users\\guial\\source\\repos\\MVCProject\\WebApplication\\WebApplication\\WebApplication.csproj",
+        "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\galmeidaf\\source\\repos\\MVCProject\\WebApplication\\WebApplication\\WebApplication.csproj",
         "packagesPath": "C:\\Users\\guial\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guial\\source\\repos\\MVCProject\\WebApplication\\WebApplication\\obj\\",
+        "outputPath": "\\\\wsl.localhost\\Ubuntu\\home\\galmeidaf\\source\\repos\\MVCProject\\WebApplication\\WebApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
