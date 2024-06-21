@@ -20,6 +20,8 @@ namespace WebApplicationMVC.Controllers
 
         public IActionResult Privacy()
         {
+            ViewData["Message"] = "Adicionando texto a politica de privacidade";
+
             return View();
         }
 
