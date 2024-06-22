@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System.Data.SqlTypes;
 using WebApplicationMVC.Data;
 namespace WebApplicationMVC
 {
@@ -12,7 +11,7 @@ namespace WebApplicationMVC
             string connectionString = builder.Configuration.GetConnectionString("WebApplicationMVCContext")
                                       ?? throw new InvalidOperationException("Connection string 'WebApplicationMVCContext' not found.");
             builder.Services.AddDbContext<WebApplicationMVCContext>(options =>
-                options.UseMySql(connectionString,ServerVersion.AutoDetect(connectionString)));
+                options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
