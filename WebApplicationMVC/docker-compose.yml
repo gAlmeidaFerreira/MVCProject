@@ -19,6 +19,7 @@ services:
       - 33064:3306
     environment:
       - MYSQL_ROOT_PASSWORD=homer171
+      - MYSQL_DATABASE=WebApplicationmvcdb
     container_name: mysqldb
     networks:
       - mvcnet
@@ -31,4 +32,3 @@ volumes:
 networks:
   mvcnet:
     driver: bridge
-    attachable: true
