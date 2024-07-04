@@ -12,6 +12,8 @@ services:
       - mvcnet
     depends_on:
       - mysql
+    environment:
+      DBHOST: mysql
 
   mysql:
     container_name: mysqldb
@@ -19,8 +21,8 @@ services:
     ports:
       - 33064:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=homer171
-      - MYSQL_DATABASE=WebApplicationmvcdb
+      MYSQL_ROOT_PASSWORD: homer171
+      MYSQL_DATABASE: WebApplicationmvcdb
     networks:
       - mvcnet
     volumes:

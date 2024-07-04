@@ -22,4 +22,5 @@ RUN dotnet publish "./WebApplicationMVC.csproj" -c $BUILD_CONFIGURATION -o /app/
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY ./appsettings.json /app/appsettings.json
 ENTRYPOINT ["dotnet", "WebApplicationMVC.dll"]
