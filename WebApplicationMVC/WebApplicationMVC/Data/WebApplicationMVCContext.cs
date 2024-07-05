@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WebApplicationMVC.Models;
 
 namespace WebApplicationMVC.Data
@@ -14,6 +10,9 @@ namespace WebApplicationMVC.Data
         {
         }
 
-        public DbSet<WebApplicationMVC.Models.Department> Department { get; set; } = default!;
+        public DbSet<Department> Department { get; set; } = default!;
+        public DbSet<SalesRecord> SalesRecord { get; set; } = default!;
+        public DbSet<Seller> Seller { get; set; } = default!;
+
     }
 }
