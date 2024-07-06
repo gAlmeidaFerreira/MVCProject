@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebApplicationMVC.Data;
+using WebApplicationMVC.Services;
 namespace WebApplicationMVC
 {
     public class Program
@@ -14,6 +15,7 @@ namespace WebApplicationMVC
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
             builder.Services.AddScoped<SeedingService>();
+            builder.Services.AddScoped<SellerService>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -35,6 +37,7 @@ namespace WebApplicationMVC
 
             app.UseAuthorization();
 
+            //Dependency injection for services
             var scope = app.Services.CreateScope();
             var seedingService = scope.ServiceProvider.GetService<SeedingService>();
             seedingService.Seed();
