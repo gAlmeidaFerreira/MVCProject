@@ -13,6 +13,8 @@ namespace WebApplicationMVC
             builder.Services.AddDbContext<WebApplicationMVCContext>(options =>
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
+            builder.Services.AddScoped<SeedingService>();
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
@@ -32,6 +34,10 @@ namespace WebApplicationMVC
             app.UseRouting();
 
             app.UseAuthorization();
+
+            var scope = app.Services.CreateScope();
+            var seedingService = scope.ServiceProvider.GetService<SeedingService>();
+            seedingService.Seed();
 
             app.MapControllerRoute(
                 name: "default",
