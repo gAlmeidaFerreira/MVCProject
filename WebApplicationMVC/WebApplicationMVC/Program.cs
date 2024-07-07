@@ -16,6 +16,7 @@ namespace WebApplicationMVC
 
             builder.Services.AddScoped<SeedingService>();
             builder.Services.AddScoped<SellerService>();
+            builder.Services.AddScoped<DepartmentService>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
