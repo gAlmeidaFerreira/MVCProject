@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApplicationMVC.Data;
 using WebApplicationMVC.Models;
+using WebApplicationMVC.Services.Exceptions;
 
 namespace WebApplicationMVC.Services
 {
@@ -34,6 +35,24 @@ namespace WebApplicationMVC.Services
             var obj = _context.Seller.Find(id);
             _context.Seller.Remove(obj);
             _context.SaveChanges();
+        }
+
+        public void Update(Seller seller)
+        {
+            if (!_context.Seller.Any(x => x.Id == seller.Id))
+            {
+                throw new NotFoundException("Seller not found");
+            }
+
+            try
+            {
+                _context.Update(seller);
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                throw new DbConcurrencyException(ex.Message);
+            }
         }
     }
 }
