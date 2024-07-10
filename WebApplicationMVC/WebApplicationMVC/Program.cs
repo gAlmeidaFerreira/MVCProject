@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
 using WebApplicationMVC.Data;
 using WebApplicationMVC.Services;
 namespace WebApplicationMVC
@@ -22,6 +24,16 @@ namespace WebApplicationMVC
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
+
+            var enUS = new CultureInfo("en-US");
+            var localizations = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(enUS),
+                SupportedCultures = [enUS],
+                SupportedUICultures = [enUS]
+            };
+
+            app.UseRequestLocalization(localizations);
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
