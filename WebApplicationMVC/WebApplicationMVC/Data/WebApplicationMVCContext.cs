@@ -14,5 +14,9 @@ namespace WebApplicationMVC.Data
         public DbSet<SalesRecord> SalesRecord { get; set; } = default!;
         public DbSet<Seller> Seller { get; set; } = default!;
 
+        internal async Task ToListAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
